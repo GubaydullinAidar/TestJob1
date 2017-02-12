@@ -17,6 +17,7 @@ public class IpSelection {
             while (startIpArr[i] < finishIpArr[i]) {
                 iterIp(startIpArr, i, finishIpArr);
                 startIpArr[i]++;
+                
             }
         }
     }
