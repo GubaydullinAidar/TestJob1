@@ -17,26 +17,19 @@ public class IpSelection {
             while (startIpArr[i] < finishIpArr[i]) {
                 iterIp(startIpArr, i, finishIpArr);
                 startIpArr[i]++;
-                
+
             }
         }
     }
 
     public static void iterIp(int[] firstIp, int index, int[] secondIp) {
-        for (int i = 3; i > index + 1;) {
+        for (int i = 3; i > index; i--) {
             while(firstIp[i] < 255) {
                 firstIp[i]++;
                 System.out.println(resultIp(firstIp));
             }
+
             firstIp[i] = -1;
-            firstIp[i-1]++;
-            i--;
-            if (firstIp[i] <= 255) {
-                i = 3;
-            }
-            if (firstIp[i] > 255) {
-                firstIp[i] = -1;
-            }
         }
         if (index == 3) {
             while (firstIp[3] < secondIp[3] - 1) {
