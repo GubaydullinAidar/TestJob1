@@ -23,13 +23,20 @@ public class IpSelection {
     }
 
     public static void iterIp(int[] firstIp, int index, int[] secondIp) {
-        for (int i = 3; i > index; i--) {
+
+            for (int i = 3; i > index;) {
             while(firstIp[i] < 255) {
                 firstIp[i]++;
                 System.out.println(resultIp(firstIp));
             }
 
             firstIp[i] = -1;
+            i--;
+
+            /*if (index == 1 && firstIp[i] < 255) {
+                firstIp[i]++;
+                i = 3;
+            }*/
         }
         if (index == 3) {
             while (firstIp[3] < secondIp[3] - 1) {
